@@ -1,0 +1,24 @@
+{
+  "name": "datakit",
+  "version": "0.0.1",
+  "description": "A lightweight library for data analysis in JavaScript.",
+  "main": "lib/datakit.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NathanEpstein/datakit.git"
+  },
+  "keywords": [
+    "data",
+    "csv",
+    "statistics"
+  ],
+  "author": "Nathan Epstein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NathanEpstein/datakit/issues"
+  },
+  "homepage": "https://github.com/NathanEpstein/datakit"
+}
