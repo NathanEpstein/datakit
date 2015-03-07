@@ -69,7 +69,30 @@ describe('max and min',function(){
   });
 });
 
+describe('cov, vari, and sd',function(){
+  var nums = [-10,-5,0,5,10];
+  var nums_ = [0,10,20,30,40];
+  it('should accurately compute covariance', function(){
+    expect(dk.cov(nums,nums_)).toBe(125);
+  });
+  it('should accurately compute variance', function(){
+    expect(dk.vari(nums)).toBe(62.5);
+  });
+  it('should accurately compute standard deviation', function(){
+    expect(dk.sd(nums_)).toBe(Math.sqrt(250));
+  });
+});
 
+describe('random number generators', function(){
+  var u = dk.uni(100);
+  it('should have the right length',function(){
+    expect(u.length).toBe(100);
+  });
+  it('should have the correct boundaries',function(){
+    expect(dk.min(u)).toBeGreaterThan(0);
+    expect(dk.max(u)).toBeLessThan(1);
+  });
+});
 
 
 
