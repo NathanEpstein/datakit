@@ -58,6 +58,16 @@ describe('prod',function(){
   });
 });
 
+describe('max and min',function(){
+  var nums = [10,-2,23,12,43,123213,2];
+  it('should accurately identify the maximum',function(){
+    expect(dk.max(nums)).toBe(123213);
+  });
+
+  it('should accurately identify the minimum',function(){
+    expect(dk.min(nums)).toBe(-2);
+  });
+});
 
 
 
