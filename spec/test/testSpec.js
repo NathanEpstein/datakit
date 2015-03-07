@@ -83,9 +83,11 @@ describe('cov, vari, and sd',function(){
   });
 });
 
-describe('random number generators', function(){
+describe('uni', function(){
   var u = dk.uni(100);
+  var n = dk.norm(100);
   it('should have the right length',function(){
+    expect(n.length).toBe(100);
     expect(u.length).toBe(100);
   });
   it('should have the correct boundaries',function(){
