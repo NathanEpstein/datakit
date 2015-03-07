@@ -42,7 +42,6 @@ describe('mean',function(){
   });
 });
 
-//FIX THIS TEST SPEC
 describe('prod',function(){
   var top = 10;
   var nums = [];
@@ -53,9 +52,9 @@ describe('prod',function(){
     expect(dk.prod(nums)).toBe(3628800);
   });
 
-  var floats = [0.1,0.2,0.3,0.4];
+  var floats_ = [Math.pow(10,75)].concat(floats.slice(0,99));
   it('should minimize errors in floating point arithmetic',function(){
-    expect(dk.isclose(dk.prod(floats),0.0024)).toBe(true);
+    expect(dk.isclose(dk.prod(floats_),47.751966659678405306351616)).toBe(true);
   });
 });
 
