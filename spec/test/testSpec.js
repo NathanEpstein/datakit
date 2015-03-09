@@ -123,5 +123,12 @@ describe('csv and col', function(){
   });
 });
 
+describe('seq',function(){
+  it('should return accurate sequences',function(){
+    expect(dk.seq(1,10).length).toBe(10);
+    expect(dk.seq(-10,10,2)[5]).toBe(0);
+  })
+})
+
 
 
