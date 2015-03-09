@@ -1,3 +1,4 @@
+'use strict'
 var dk = require('../../lib/datakit.js');
 
 describe('isclose',function(){
@@ -83,16 +84,36 @@ describe('cov, vari, and sd',function(){
   });
 });
 
-describe('uni', function(){
+describe('random number generators', function(){
   var u = dk.uni(100);
   var n = dk.norm(100);
+  var n_ = dk.norm(3);
   it('should have the right length',function(){
-    expect(n.length).toBe(100);
     expect(u.length).toBe(100);
+    expect(n.length).toBe(100);
+    expect(n_.length).toBe(3);
   });
-  it('should have the correct boundaries',function(){
+  it('should have the correct uniform boundaries',function(){
     expect(dk.min(u)).toBeGreaterThan(0);
     expect(dk.max(u)).toBeLessThan(1);
+  });
+});
+
+describe('csv and col', function(){
+  var val, d;
+  beforeEach(function(done) {
+    dk.csv('spec/test/test.csv',function(data){
+      console.log('data: ',data)
+      d = data;
+      val = d[0].COL1;
+      done();
+    });
+  });
+
+  it('should correctly read a csv file and find columns', function(done) {
+    expect(val).toBe('val11');
+    expect(dk.col(d,'COL2')[0]).toBe('val12');
+    done();
   });
 });
 
