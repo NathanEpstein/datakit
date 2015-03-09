@@ -93,6 +93,13 @@ describe('random number generators', function(){
     expect(n.length).toBe(100);
     expect(n_.length).toBe(3);
   });
+  it('should generate normals from Box-Muller',function(){
+    var z1 = n[0];
+    var z2 = n[1];
+    var u = Math.exp(Math.pow(Math.pow(z1,2)+Math.pow(z2,2),2)*(-2));
+    expect(u).toBeGreaterThan(0);
+    expect(u).toBeLessThan(1);
+  })
   it('should have the correct uniform boundaries',function(){
     expect(dk.min(u)).toBeGreaterThan(0);
     expect(dk.max(u)).toBeLessThan(1);
@@ -103,7 +110,6 @@ describe('csv and col', function(){
   var val, d;
   beforeEach(function(done) {
     dk.csv('spec/test/test.csv',function(data){
-      console.log('data: ',data)
       d = data;
       val = d[0].COL1;
       done();
