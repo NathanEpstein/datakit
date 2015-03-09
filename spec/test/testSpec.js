@@ -1,5 +1,7 @@
 'use strict'
 var dk = require('../../lib/datakit.js');
+var fs = require('fs');
+var exec = require('child_process').exec;
 
 describe('isclose',function(){
   it('should return true for close numbers',function(){
@@ -99,7 +101,7 @@ describe('random number generators', function(){
     var u = Math.exp(Math.pow(Math.pow(z1,2)+Math.pow(z2,2),2)*(-2));
     expect(u).toBeGreaterThan(0);
     expect(u).toBeLessThan(1);
-  })
+  });
   it('should have the correct uniform boundaries',function(){
     expect(dk.min(u)).toBeGreaterThan(0);
     expect(dk.max(u)).toBeLessThan(1);
@@ -127,8 +129,21 @@ describe('seq',function(){
   it('should return accurate sequences',function(){
     expect(dk.seq(1,10).length).toBe(10);
     expect(dk.seq(-10,10,2)[5]).toBe(0);
-  })
-})
+  });
+});
 
-
+describe('plot',function(){
+  var f;
+  beforeEach(function(done){
+    dk.plot(dk.seq(1,10));
+    fs.readFile('DK_PLOT.html',function(err,data){
+      f = data;
+      done();
+    });
+  });
+  it('should create a file',function(done){
+    expect(typeof f === 'undefined').toBe(false);
+    done();
+  });
+});
 

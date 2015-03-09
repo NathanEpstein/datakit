@@ -21,7 +21,4 @@
     "url": "https://github.com/NathanEpstein/datakit/issues"
   },
   "homepage": "https://github.com/NathanEpstein/datakit",
-  "dependencies": {
-    "async": "^0.9.0"
-  }
 }
