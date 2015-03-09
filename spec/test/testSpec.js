@@ -132,6 +132,18 @@ describe('seq',function(){
   });
 });
 
+describe('reg',function(){
+  var x = [1,2,3,5];
+  var y = [2,4,6,10];
+  var m = dk.reg(x,y);
+  it('should return an accurate model',function(){
+    expect(m.f(4)).toBe(8);
+  });
+  it('should return an accurate interpolation of the linear model', function(){
+    expect(m.pts[0]).toBe(2);
+  });
+});
+
 describe('plot',function(){
   var f;
   beforeEach(function(done){
@@ -146,4 +158,3 @@ describe('plot',function(){
     done();
   });
 });
-
