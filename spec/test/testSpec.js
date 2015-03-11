@@ -154,17 +154,16 @@ describe('rep',function(){
   });
 });
 
-// describe('plot',function(){
-//   var f;
-//   beforeEach(function(done){
-//     dk.plot(dk.seq(1,10));
-//     fs.readFile('DK_PLOT.html',function(err,data){
-//       f = data;
-//       done();
-//     });
-//   });
-//   it('should create a file',function(done){
-//     expect(typeof f === 'undefined').toBe(false);
-//     done();
-//   });
-// });
+describe('plot',function(){
+  var p;
+  beforeEach(function(done) {
+    p = dk.plot([1,2,3])
+    done();
+  });
+
+  it('should return an html string',function(done){
+    expect(p.slice(0,6)).toBe('<html>');
+    expect(p.slice(p.length-7,p.length)).toBe('</html>')
+    done();
+  });
+});
