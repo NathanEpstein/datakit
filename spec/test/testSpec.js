@@ -144,17 +144,27 @@ describe('reg',function(){
   });
 });
 
-describe('plot',function(){
-  var f;
-  beforeEach(function(done){
-    dk.plot(dk.seq(1,10));
-    fs.readFile('DK_PLOT.html',function(err,data){
-      f = data;
-      done();
-    });
+describe('rep',function(){
+  var arr = dk.rep(0.5,100);
+  it('should have the correct length',function(){
+    expect(arr.length).toBe(100);
   });
-  it('should create a file',function(done){
-    expect(typeof f === 'undefined').toBe(false);
-    done();
+  it('should have the correct value',function(){
+    expect(arr[0]).toBe(0.5);
   });
 });
+
+// describe('plot',function(){
+//   var f;
+//   beforeEach(function(done){
+//     dk.plot(dk.seq(1,10));
+//     fs.readFile('DK_PLOT.html',function(err,data){
+//       f = data;
+//       done();
+//     });
+//   });
+//   it('should create a file',function(done){
+//     expect(typeof f === 'undefined').toBe(false);
+//     done();
+//   });
+// });
