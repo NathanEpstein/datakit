@@ -1,5 +1,5 @@
 {
-  "name": "datakit",
+  "name": "datakitjs",
   "version": "0.0.1",
   "description": "A lightweight library for data analysis in JavaScript.",
   "main": "lib/datakit.js",
