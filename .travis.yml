@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+- '0.12'
+- '0.11'
+- '0.10'
+- '0.8'
+- iojs
+deploy:
+  provider: npm
+  email: ne2210@columbia.edu
+  api_key:
+    secure: WDjnZSc8q9Oh2ro0Gpoa75/s2Nb4k1CguyZeQwibt3dl2+QveuTdbg9mAsKmbwSBSy+e+EWiZI5/C0j+pDGlZy/pjqse7c1VGcLzVqeYrSbJtvFXKl5eEUXbM0tuvw9ASKlHGM7P88xY/oe8osqoXmUnkjUHPWsXaTHhsG3HqDc=
+  on:
+    tags: true
+    repo: NathanEpstein/datakit
