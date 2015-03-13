@@ -48,7 +48,7 @@ dk.csv('file.csv',function(data){
 var x1 = dk.norm(25);
 dk.plot(x1); // x1 will be plotted on the y-axis, index on the x-axis
 
-var labels = seq(1,25);
+var labels = dk.seq(1,25);
 var x2 = dk.norm(25);
 var x3 = dk.norm(25);
 dk.plot(labels,x1,x2,x3); //labels on the x-axis, the next three arrays will each be plotted on the y-axis
