@@ -89,10 +89,12 @@ describe('cov, vari, and sd',function(){
 describe('random number generators', function(){
   var u = dk.uni(100);
   var n = dk.norm(100);
+  var e = dk.norm(100);
   var n_ = dk.norm(3);
   it('should have the right length',function(){
     expect(u.length).toBe(100);
     expect(n.length).toBe(100);
+    expect(e.length).toBe(100);
     expect(n_.length).toBe(3);
   });
   it('should generate normals from Box-Muller',function(){
@@ -105,6 +107,11 @@ describe('random number generators', function(){
   it('should have the correct uniform boundaries',function(){
     expect(dk.min(u)).toBeGreaterThan(0);
     expect(dk.max(u)).toBeLessThan(1);
+  });
+  it('should generate exponentials from uniforms',function(){
+    u = Math.exp(-e[0]);
+    expect(u).toBeGreaterThan(0);
+    expect(u).toBeLessThan(1);
   });
 });
 

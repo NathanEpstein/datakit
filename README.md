@@ -46,7 +46,9 @@ dk.csv('file.csv',function(data){
 //PLOT ARRAY(S) OF DATA
 
 var x1 = dk.norm(25);
-dk.plot(x1); // x1 will be plotted on the y-axis, index on the x-axis
+var plot = dk.plot(x1); // x1 will be plotted on the y-axis, index on the x-axis
+//dk.plot returns a string of the html used to create the plot.
+
 
 var labels = dk.seq(1,25);
 var x2 = dk.norm(25);
@@ -125,6 +127,11 @@ dk.max(x); //returns 3
 ###Random Numbers
 ```javascript
 var dk = require('datakitjs');
+
+//GET AN ARRAY OF EXPONENTIALLY DISTRIBUTED VALUES
+
+dk.exp(3,1); //returns [ 0.3584189321510761, 1.0466439500242446, 0.08887770301056963 ]
+
 
 //GET AN ARRAY OF NORMALLY DISTRIBUTED VALUES
 
