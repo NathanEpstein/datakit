@@ -174,3 +174,27 @@ describe('plot',function(){
     done();
   });
 });
+
+describe('numeric', function() {
+  var d;
+  beforeEach(function(done) {
+    dk.csv('spec/test/test2.csv', function(data) {
+      d = dk.numeric(data, ['COL2'], 6253);
+      //d = data;
+      done();
+    });
+  });
+
+  it('should convert string values to numbers', function(done) {
+    expect(dk.col(d, 'COL2')[0]).toBe(1);
+    done();
+  });
+
+
+  it('should convert empty cells to the supplied default', function(done) {
+    expect(dk.col(d, 'COL2')[2]).toBe(6253);
+    done();
+  });
+
+
+});
