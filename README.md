@@ -42,6 +42,24 @@ dk.csv('file.csv',function(data){
 //Output:
 //[val12,val22]
 
+// By default, dk.csv will convert all values to strings. You can convert select
+// columns to numbers by passing an array of column names to 'dk.numeric'. 
+
+//file2.csv
+// COL1, COL2
+// val11, 1
+// val21, 2
+
+dk.csv('file2.csv', function(data){
+  var d = dk.numeric(data, ['COL2'], 0) // The third parameter value will be filled
+  // in to blank cells. Its default value is 0.
+  var c2 = dk.col(d, 'COL2');
+  console.log(c2);
+});
+
+//Output:
+//[1,2]
+
 
 //PLOT ARRAY(S) OF DATA
 
