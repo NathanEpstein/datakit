@@ -1,6 +1,6 @@
 {
   "name": "datakitjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lightweight library for data analysis in JavaScript.",
   "main": "lib/datakit.js",
   "scripts": {
