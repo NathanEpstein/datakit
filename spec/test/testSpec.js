@@ -100,7 +100,7 @@ describe('random number generators', function() {
   it('should generate normals from Box-Muller', function() {
     var z1 = n[0];
     var z2 = n[1];
-    var u = Math.exp(Math.pow(Math.pow(z1,2)+Math.pow(z2,2),2)*(-2));
+    var u = Math.exp(Math.pow(Math.pow(z1, 2) + Math.pow(z2, 2), 2) * (-2));
     expect(u).toBeGreaterThan(0);
     expect(u).toBeLessThan(1);
   });
@@ -134,14 +134,14 @@ describe('csv and col', function() {
 
 describe('seq', function() {
   it('should return accurate sequences', function() {
-    expect(dk.seq(1,10).length).toBe(10);
-    expect(dk.seq(-10,10,2)[5]).toBe(0);
+    expect(dk.seq(1, 10).length).toBe(10);
+    expect(dk.seq(-10, 10, 2)[5]).toBe(0);
   });
 });
 
 describe('reg', function() {
-  var x = [1,2,3,5];
-  var y = [2,4,6,10];
+  var x = [1, 2, 3, 5];
+  var y = [2, 4, 6, 10];
   var m = dk.reg(x,y);
   it('should return an accurate model', function() {
     expect(m.f(4)).toBe(8);
@@ -152,7 +152,7 @@ describe('reg', function() {
 });
 
 describe('rep', function() {
-  var arr = dk.rep(0.5,100);
+  var arr = dk.rep(0.5, 100);
   it('should have the correct length', function() {
     expect(arr.length).toBe(100);
   });
@@ -164,7 +164,7 @@ describe('rep', function() {
 describe('plot', function() {
   var p;
   beforeEach(function(done) {
-    p = dk.plot([1,2,3])
+    p = dk.plot([1, 2, 3])
     done();
   });
 
