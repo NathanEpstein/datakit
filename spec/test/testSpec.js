@@ -149,6 +149,9 @@ describe('reg', function() {
   it('should return an accurate interpolation of the linear model', function() {
     expect(m.pts[0]).toBe(2);
   });
+  it('should have the correct end points', function() {
+    expect(m.endPoints).toEqual({ x1: 1, x2: 5, y1: 2, y2: 10 });
+  });
 });
 
 describe('rep', function() {
@@ -164,13 +167,16 @@ describe('rep', function() {
 describe('plot', function() {
   var p;
   beforeEach(function(done) {
-    p = dk.plot([1, 2, 3])
+    p = new dk.Chart([1, 2, 3]).addDataSet({
+      x: [1, 2, 3],
+      y: [4, 5, 1]
+    }).plot();
     done();
   });
 
   it('should return an html string', function(done) {
-    expect(p.slice(0,6)).toBe('<html>');
-    expect(p.slice(p.length-7,p.length)).toBe('</html>')
+    expect(p.slice(0,6)).toBe('<head>');
+    expect(p.slice(p.length-7,p.length)).toBe('</body>')
     done();
   });
 });
