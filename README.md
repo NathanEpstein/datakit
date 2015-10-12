@@ -63,9 +63,28 @@ dk.csv('file2.csv', function(data) {
 
 //PLOT ARRAY(S) OF DATA
 
-var x1 = dk.norm(25);
-var plot = dk.plot(x1); // x1 will be plotted on the y-axis, index on the x-axis
-//dk.plot returns a string of the html used to create the plot.
+var chart = new dk.Chart({
+  //optional config
+  height: 500,
+  width: 500,
+  xLab: 'x-Axis Label',
+  yLab: 'y-Axis Label'
+});
+
+chart.addDataSet({
+  x: [1, 2, 3],
+  y: [4, 5, 6],
+  z: [2, 3, 5],
+  colors: ['blue', 'green', 'red']
+}).addDataSet({
+  x: [1, 10],
+  y: [2, -1],
+  type: 'line'
+}).addDataSet({
+  x: [10, 5, 1],
+  y: [4, 5, 2],
+  labels: ["first", "second", "third"]
+}).plot();
 
 
 var labels = dk.seq(1, 25);
@@ -103,6 +122,9 @@ var model = dk.reg(x, y);
 
 // model.pts is an array of the estimated y for each element of x
 // model.pts = [1.5, 2, 2.5];
+
+// model.endPoints is an object with the coordinates of the boundary points
+// model.endPoints = { x1: 1, x2: 3, y1: 1.5, y2: 2.5 };
 
 ```
 
