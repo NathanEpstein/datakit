@@ -6,8 +6,6 @@
 ##About
 A lightweight library/framework for data analysis in JavaScript.
 
-Check out this <a href="http://nathanepstein.github.io/jekyll/update/2015/02/26/jsdata.html">blog post</a> on the need for more JavaScript data tools.
-
 ##Usage
 
 ```npm install datakitjs --save```
