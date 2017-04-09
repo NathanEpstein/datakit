@@ -1,18 +1,18 @@
-#datakit
+# datakit
 
 <img src="https://travis-ci.org/NathanEpstein/datakit.svg?branch=master">
 <img src="./plot.png">
 
-##About
+## About
 A lightweight library/framework for data analysis in JavaScript.
 
-##Usage
+## Usage
 
 ```npm install datakitjs --save```
 
-##Documentation & Examples
+## Documentation & Examples
 
-###Reading, Filtering, & Plotting Data
+### Reading, Filtering, & Plotting Data
 ```javascript
 var dk = require('datakitjs');
 
@@ -85,7 +85,7 @@ chart.addDataSet({
 }).plot();
 ```
 
-###Statistical Methods
+### Statistical Methods
 
 ```javascript
 var dk = require('datakitjs');
@@ -120,7 +120,7 @@ var model = dk.reg(x, y);
 
 ```
 
-###Convenience Methods
+### Convenience Methods
 ```javascript
 var dk = require('datakitjs');
 
@@ -156,7 +156,7 @@ dk.max(x); //returns 3
 
 ```
 
-###Random Numbers
+### Random Numbers
 ```javascript
 var dk = require('datakitjs');
 
@@ -175,12 +175,12 @@ dk.uni(3); //returns [0.30658303829841316, 0.1601463456172496, 0.853885013144463
 
 ```
 
-##Testing
+## Testing
 
 Just run `npm test` to run the tests.
 
 
-##Contributing
+## Contributing
 
 Additional methods for random number generation, data filtration, convenience functions, and common statistical analyses are welcome additions. Just add tests following the structure in `spec/test/testSpec.js`.
 
